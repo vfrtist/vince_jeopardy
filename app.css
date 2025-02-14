@@ -1,0 +1,220 @@
+:root {
+    --font-color: rgb(26, 25, 26);
+    --foreground: #fceef5e3;
+    --background: linear-gradient(90deg, rgba(171, 97, 126, 1) 0%, rgb(133, 96, 122) 100%);
+    --shadow: #68516b5e;
+    --title: #fceef5;
+    --accent: #f688e1;
+    --light-accent: #ffd0e2d1;
+    --player1: #efbf74;
+    --player2: #38ba8d;
+    --inactive: #d6c5cb88;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Protest Strike", sans-serif;
+    font-weight: 300;
+    font-size: 18pt;
+}
+
+li {
+    list-style-type: none;
+}
+
+main {
+    width: 100dvw;
+    height: 100dvh;
+    background: var(--background);
+    color: var(--font-color);
+}
+
+#frame {
+    width: 80%;
+    height: 75%;
+    border-radius: 12px;
+    margin-top: 100px;
+    padding: 8px;
+}
+
+#prompts {
+    height: 100%;
+    width: 100%;
+    gap: 8px;
+    padding: 8px;
+}
+
+#prompts section {
+    width: 100%;
+    height: 100%;
+    justify-content: space-evenly;
+}
+
+.prompt {
+    color: var(--font-color);
+    width: 100%;
+    height: 100px;
+    border-radius: 8px;
+    margin: 4px;
+    border: none;
+    background: var(--light-accent);
+    transition: outline .2s, background-color .2s, color .2s;
+    cursor: pointer;
+}
+
+.vertical {
+    flex-direction: column;
+}
+
+.horizontal {
+    flex-direction: row;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden {
+    visibility: hidden !important;
+}
+
+button:not(.inactive):hover {
+    outline: 4px solid var(--accent);
+    background-color: var(--foreground);
+}
+
+aside {
+    width: 160px;
+    position: absolute;
+    top: 0;
+    padding: 24px 4px;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    box-shadow: 8px 8px 8px var(--shadow);
+}
+
+
+.player1 {
+    background-color: var(--player1);
+}
+
+.player2 {
+    background-color: var(--player2);
+}
+
+.both {
+    background: linear-gradient(90deg, var(--player1) 0%, var(--player2) 100%);
+}
+
+.none {
+    background-color: var(--accent);
+}
+
+#player1 {
+    left: 0;
+    border-radius: 0 0 56px 0;
+}
+
+#player2 {
+    right: 0;
+    border-radius: 0 0 0 56px;
+}
+
+.cabin {
+    font-family: "Cabin", sans-serif;
+    font-weight: 600;
+}
+
+.name {
+    font-size: 24pt;
+}
+
+.title {
+    font-size: 24pt;
+    color: var(--title);
+    letter-spacing: 1px;
+    height: 100px;
+    align-content: center;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-align: center;
+}
+
+.inactive {
+    background-color: var(--inactive);
+    color: var(--inactive);
+    cursor: default;
+}
+
+dialog::backdrop {
+    overflow: hidden;
+    background: none;
+}
+
+dialog {
+    z-index: 2;
+    background: none;
+    border: none;
+    outline: none;
+    margin: auto;
+    justify-content: space-evenly !important;
+    gap: 48px;
+    width: 700px;
+
+}
+
+dialog .upper {
+    width: inherit;
+    height: 300px;
+    padding: 24px;
+    border-radius: 12px;
+    box-sizing: border-box;
+    background-color: var(--title);
+    font-size: 24pt;
+    text-align: center;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+dialog .lower {
+    width: inherit;
+    height: 120px;
+    /* background-color: var(--title); */
+    justify-content: space-evenly !important;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.refresh {
+    height: 30px;
+    background-color: var(--accent);
+}
+
+.lower div {
+    padding: 4px 12px;
+    border-radius: 24px;
+    cursor: pointer;
+    align-content: center;
+    text-align: center;
+    flex-basis: 25%;
+    transition: scale .2s;
+    height: 40px;
+}
+
+.lower div:hover {
+    scale: 1.05;
+}
+
+.hidden {
+    display: none !important;
+}
